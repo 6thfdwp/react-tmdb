@@ -9,15 +9,28 @@
 }
 
 .app-header {
-  background-image: url("https://www.themoviedb.org/assets/2/v4/footers_v2/TheMatrix-bb0fe85661c3587a83566343066fe017ffea28e9823a5ded42f74b599f7d12d6.jpg");
+  background-image: url('https://www.themoviedb.org/assets/2/v4/footers_v2/TheMatrix-bb0fe85661c3587a83566343066fe017ffea28e9823a5ded42f74b599f7d12d6.jpg');
   /* radial-gradient(at 30% top, rgba(7, 64, 52, 1) 0%, rgba(8, 28, 36, 1) 70%); */
   background-position: center top;
   background-size: cover;
   background-repeat: no-repeat;
   display: flex;
   align-items: center;
+  justify-content: center;
   height: 400px;
   margin-bottom: 60px;
+}
+.search-input {
+  border: 0;
+  align-self: flex-end;
+  margin-bottom: -20px;
+  font-size: 100%;
+  border-radius: 30px;
+  background-color: #fff;
+  color: #204529;
+  padding: 12px 10px;
+  /* max-width: 180px; */
+  width: 70%;
 }
 
 .movie-card {
