@@ -1,0 +1,224 @@
+body {
+  height: 100%;
+  background-color: #081c24;
+  font-family: Roboto;
+}
+.app-screen {
+  background-color: #081c24;
+}
+
+.app-header {
+  /* background-image: url('https://www.themoviedb.org/assets/2/v4/footers_v2/TheMatrix-bb0fe85661c3587a83566343066fe017ffea28e9823a5ded42f74b599f7d12d6.jpg'); */
+  background-image: url('./header.jpg');
+  /* radial-gradient(at 30% top, rgba(7, 64, 52, 1) 0%, rgba(8, 28, 36, 1) 70%); */
+  background-position: center top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 210px;
+  margin-bottom: 60px;
+}
+
+.search-box {
+  border-radius: 30px;
+  background-color: #fff;
+  display: flex;
+  position: relative;
+  align-self: flex-end;
+  margin-bottom: -20px;
+  width: 85%;
+}
+.search-input {
+  border: 0;
+  border-radius: 30px;
+  /* background-color: #fff; */
+  color: #00d573;
+  flex: 1;
+  font-size: 100%;
+  padding: 12px 10px;
+  width: 100%;
+}
+.search-box_icon {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  color: #00d573;
+  margin-right: 18px;
+}
+.search-box_result {
+  position: absolute;
+  top: 40px;
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  margin-top: 10px;
+  z-index: 999;
+  width: 100%;
+}
+.search-box_result_list {
+  /* border: 0; */
+  background-color: #fff;
+  text-decoration: none;
+  max-height: 400px;
+  padding: 0 10px;
+  overflow-y: auto;
+}
+.search-box_result_list li {
+  border: 0;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  line-height: 25px;
+  color: #081c24;
+  /* padding-left: 8px; */
+  padding: 5px 0 0 8px;
+}
+.search-box_result_list i {
+  padding-top: 9px;
+  color: grey;
+}
+.search-box_result_list a:hover {
+  color: transparent;
+  text-decoration: none;
+}
+@media (min-width: 768px) {
+  .app-header {
+    height: 400px;
+  }
+  .search-box {
+    width: 70%;
+  }
+  .search-box_result_list li {
+    font-size: 15px;
+    line-height: 35px;
+  }
+  .search-box_result_list i {
+    padding-top: 10px;
+  }
+}
+
+.movie-card {
+  margin: 10px 0;
+  /* padding-right: 40px; */
+  position: relative;
+  /* height: 400px; */
+}
+.movie-card a:hover {
+  text-decoration: none;
+}
+.movie-card_score {
+  border-radius: 10px;
+  color: #fff;
+  font-size: 12px;
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  padding: 2px 10px;
+}
+.movie-card_info {
+  color: #fff;
+  display: flex;
+  font-size: 14px;
+  flex-direction: column;
+  line-height: 20px;
+  padding: 5px 0;
+  text-decoration: none;
+  /* margin-bottom: 15px; */
+}
+.title-text {
+  color: #fff;
+  font-family: Montserrat;
+  font-size: 20px;
+  font-weight: 700;
+}
+.secondary-text {
+  font-size: 12px;
+  color: #a5a7af;
+}
+
+.movie-backdrop-photo {
+  height: 260px;
+  width: 100%;
+  object-fit: cover;
+}
+.movie-cover-photo {
+  height: 80%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.movie-cover-photo_small {
+  height: 80%;
+  width: 40%;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-top: -50px;
+}
+@media (min-width: 768px) {
+  .movie-card {
+    margin: 30px 0px 20px 0;
+    padding-right: 40px;
+  }
+  .movie-backdrop-photo {
+    height: 400px;
+  }
+  .movie-cover-photo {
+    height: 90%;
+  }
+  .movie-card_score {
+    font-size: 12px;
+    padding: 4px 12px;
+  }
+  .secondary-text {
+    font-size: 14px;
+  }
+}
+
+.movie-detail_container {
+  color: #fff;
+  display: flex;
+  margin-bottom: 50px;
+}
+.movie-detail_info {
+  padding: 20px;
+}
+.movie-detail_title {
+  line-height: 28px;
+  padding: 5px 5px 25px 0;
+}
+.movie-detail_meta {
+  /* color: #868e91; */
+  font-size: 15px;
+  line-height: 24px;
+}
+.separator {
+  border: 0;
+  /* border-top: 1px solid #eee; */
+  background-color: #eee;
+  height: 0.5px;
+}
+.movie-detail_overview {
+  color: #a5a7af;
+  /* line-height: 20px; */
+  margin: 30px 0;
+  padding: 10px;
+}
+.movie-detail_overview p {
+  line-height: 24px;
+}
+
+@media (min-width: 768px) {
+  .movie-detail_info {
+    padding: 40px;
+  }
+  .movie-cover-photo_small {
+    height: auto;
+    width: auto;
+    margin-top: -80px;
+  }
+  .movie-detail_meta {
+    line-height: 28px;
+  }
+}

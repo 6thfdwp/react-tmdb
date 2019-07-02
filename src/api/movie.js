@@ -10,7 +10,6 @@ const fetchReducer = (state, nextState) => {
 };
 
 const usePopularMovies = () => {
-  // const initState = { pending: false, error: null, data: null };
   // next state
   const [state, setState] = useReducer(fetchReducer, { pending: false, error: null, data: [] });
 
@@ -47,10 +46,10 @@ const useSearchMovies = queryName => {
       setState({ pending: true, error: null });
       try {
         const resp = await axios.get(url);
-        console.log(`[useSearchMovies] by name ${query}`);
+        console.log(`[useSearchMovies] done: by name ${query}`);
         setState({ pending: false, hits: resp.data.results });
       } catch (error) {
-        //
+        setState({ pending: false, error });
       }
     };
 
@@ -64,4 +63,28 @@ const useSearchMovies = queryName => {
   return [state];
 };
 
-export { usePopularMovies, useSearchMovies };
+const useMovieDetail = id => {
+  const [state, setState] = useReducer(fetchReducer, {
+    pending: false,
+    error: null,
+    movie: null
+  });
+  useEffect(() => {
+    const url = `${API_BASE_URL}/movie/${id}?api_key=${API_KEY}`;
+    const doFetch = async () => {
+      setState({ pending: true, error: null });
+      try {
+        const resp = await axios.get(url);
+        setState({ pending: false, movie: resp.data });
+      } catch (error) {
+        setState({ pending: false, error });
+      }
+    };
+
+    doFetch();
+  }, [id]);
+
+  return [state];
+};
+
+export { usePopularMovies, useSearchMovies, useMovieDetail };

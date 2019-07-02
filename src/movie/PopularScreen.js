@@ -14,8 +14,9 @@ export default function PopularScreen() {
       </header>
 
       <div className="container">
+        <h3 className="title-text">Popular Movies</h3>
         <div className="row">
-          {data.slice(0, 9).map(movie => (
+          {data.map(movie => (
             <MovieCard key={movie.id} movie={movie} />
           ))}
         </div>

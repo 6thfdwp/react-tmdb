@@ -6,7 +6,8 @@ import MovieDetailScreen from './movie/MovieDetailScreen';
 
 export default () => (
   <Switch>
-    <Route path="/" component={PopularScreen} />
-    {/* <Route path='/' component={MovieDetailScreen} /> */}
+    <Route exact path="/" component={PopularScreen} />
+    <Route path="/movie/:id" component={MovieDetailScreen} />
+    <Route path="*" render={() => <h1>Path not found</h1>} />
   </Switch>
 );
