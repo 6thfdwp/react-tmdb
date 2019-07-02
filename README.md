@@ -25,7 +25,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 Hooks are great for reusable logic, component becomes simple without unnecessary nesting and state binding issues in traditional class component. The best practice need to be investigated when using it for more complex scenario.
 
-Screens need to add error handling for better UX. The error state has already been returned from custom hooks.
+Screens need to add error handling for better UX. The error state has already been returned from custom hooks. Could possibly try Suspense to display spinner when it takes a little longer to show first page content.
 
 SearchBox with the dropdown can be polished to look more visually integrated. Also it is better to add a bit debouncing to control search request when user is typing fast. Maybe combine a debouncing hook?
 
