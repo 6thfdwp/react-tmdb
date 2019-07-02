@@ -19,7 +19,7 @@ export default function MovieCard({ movie }) {
         />
         <ScoreBadge score={movie.vote_average} />
         <div className="movie-card_info">
-          <span>{movie.title}</span>
+          <span className="movie-card_title">{movie.title}</span>
           <span className="secondary-text">{formattedDate}</span>
         </div>
       </Link>

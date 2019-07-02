@@ -25,18 +25,28 @@ function MovieHead({ movie }) {
   );
 }
 
+const goBack = history => {
+  if (history.length > 1) {
+    history.goBack();
+  } else {
+    // when directly open the detail page
+    history.replace({ path: '/' });
+  }
+};
 export default function MovieDetailScreen(props) {
   const movieId = props.match.params.id;
   // const movie = props.movie;
-  console.log(movieId);
   const [{ pending, error, movie }] = useMovieDetail(movieId);
   if (!movie) {
     return null;
   }
-  console.log(movie);
+
   return (
     <>
-      <header className="">
+      <header className="movie-detail_header">
+        <button onClick={() => goBack(props.history)}>
+          <i className="fa fa-arrow-left" />
+        </button>
         <img
           className="movie-backdrop-photo"
           src={`${IMG_URL_PREFIX}/original/${movie.backdrop_path}`}

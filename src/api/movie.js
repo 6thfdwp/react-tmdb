@@ -10,21 +10,20 @@ const fetchReducer = (state, nextState) => {
 };
 
 const usePopularMovies = () => {
-  // next state
   const [state, setState] = useReducer(fetchReducer, { pending: false, error: null, data: [] });
 
   useEffect(() => {
     const url = `${API_BASE_URL}/movie/popular?api_key=${API_KEY}&page=1`;
     const doFetch = async () => {
       setState({ pending: true, error: null });
-      console.log(`[usePopularMovies] fetching..`);
+      // console.log(`[usePopularMovies] fetching..`);
       try {
         const resp = await axios.get(url);
         setState({ pending: false, data: resp.data.results });
-        console.log(`[usePopularMovies] fetch done`);
+        // console.log(`[usePopularMovies] fetch done`);
       } catch (error) {
         setState({ pending: false, error });
-        console.log(`[usePopularMovies] fetch error`);
+        // console.log(`[usePopularMovies] fetch error`);
       }
     };
     doFetch();

@@ -167,6 +167,11 @@ body {
   .movie-cover-photo {
     height: 90%;
   }
+  .movie-card_title {
+    font-size: 18px;
+    line-height: 24px;
+    padding-bottom: 5px;
+  }
   .movie-card_score {
     font-size: 12px;
     padding: 4px 12px;
@@ -179,6 +184,20 @@ body {
   }
 }
 
+/* .movie-detail_header {
+  position: relative;
+} */
+.movie-detail_header button {
+  position: absolute;
+  border: 0;
+  background: transparent;
+  top: 10px;
+  left: 10px;
+}
+.movie-detail_header i {
+  color: #fff;
+  font-size: 24px;
+}
 .movie-detail_container {
   color: #fff;
   display: flex;
@@ -198,9 +217,9 @@ body {
 }
 .separator {
   border: 0;
-  /* border-top: 1px solid #eee; */
-  background-color: #eee;
-  height: 0.5px;
+  border-top: 1px solid #eee;
+  /* background-color: #eee; */
+  height: 0;
 }
 .movie-detail_overview {
   color: #a5a7af;
