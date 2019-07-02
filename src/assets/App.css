@@ -171,8 +171,11 @@ body {
     font-size: 12px;
     padding: 4px 12px;
   }
+  .title-text {
+    font-size: 30px;
+  }
   .secondary-text {
-    font-size: 14px;
+    font-size: 16px;
   }
 }
 
@@ -218,7 +221,11 @@ body {
     width: auto;
     margin-top: -80px;
   }
+  .movie-detail_title {
+    font-size: 30px;
+  }
   .movie-detail_meta {
+    font-size: 16px;
     line-height: 28px;
   }
 }

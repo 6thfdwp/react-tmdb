@@ -6,7 +6,7 @@ import App from './App';
 // import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
-  <Router>
+  <Router basename="/react-tmdb">
     <App />
   </Router>,
   document.getElementById('root')

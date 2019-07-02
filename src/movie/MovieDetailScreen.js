@@ -48,7 +48,9 @@ export default function MovieDetailScreen(props) {
         <hr className="separator" />
 
         <div className="movie-detail_overview">
-          <h3 style={{ color: '#fff', paddingBottom: 15 }}>Overview</h3>
+          <h3 className="title-text" style={{ color: '#fff', paddingBottom: 15 }}>
+            Overview
+          </h3>
           <p>{movie.overview}</p>
         </div>
       </div>
