@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 import { useSearchMovies } from '../api/movie';
 
-function ResultItemLink({ hit }) {
+function HitItemLink({ hit }) {
   return (
     <Link to={`/movie/${hit.id}`}>
       <div style={{ display: 'flex' }}>
@@ -13,16 +13,37 @@ function ResultItemLink({ hit }) {
     </Link>
   );
 }
+
+function useDebounceQuery(queryword) {
+  const [debouncedQuery, setDebouncedQuery] = useState(queryword);
+  console.log(`[use debounced query] ${queryword}`);
+  useEffect(() => {
+    const tid = setTimeout(() => {
+      console.log(`finally set debounced query...`);
+      setDebouncedQuery(queryword);
+    }, 300);
+
+    return () => clearTimeout(tid);
+  }, [queryword]);
+
+  return debouncedQuery;
+}
+
 export default function SearchBox() {
   const [queryName, setQueryName] = useState('');
-  const [{ pending: searchPending, error: searchError, hits }] = useSearchMovies(queryName);
+  const debouncedQuery = useDebounceQuery(queryName);
+  // console.log(`trigger debouncedQuery ${debouncedQuery}`);
+
+  const [{ pending: searchPending, error: searchError, hits }] = useSearchMovies(debouncedQuery);
+  // console.log(`[SearchBox] rendered with ${queryName}`);
+
   const renderList = hits => {
     if (!hits.length) return null;
     return (
       <div className="search-box_result">
         <ul className="search-box_result_list">
           {hits.map(hit => (
-            <ResultItemLink key={hit.id} hit={hit} />
+            <HitItemLink key={hit.id} hit={hit} />
           ))}
         </ul>
       </div>

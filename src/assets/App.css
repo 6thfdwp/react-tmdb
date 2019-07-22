@@ -3,6 +3,12 @@ body {
   background-color: #081c24;
   font-family: Roboto;
 }
+
+.draw-grid {
+  display: flex;
+  /* flex:  */
+  width: 300px;
+}
 .app-screen {
   background-color: #081c24;
 }

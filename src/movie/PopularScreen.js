@@ -7,6 +7,7 @@ import MovieCard from '../ui/MovieCard';
 
 export default function PopularScreen() {
   const [{ pending, error, data }] = usePopularMovies();
+  console.log(`[PopularScreen] get`);
   return (
     <>
       <header className="app-header">
